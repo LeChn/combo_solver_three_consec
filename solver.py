@@ -13,8 +13,11 @@ print(countUniquePaths(10,4))
 
 
 def printDp(n: int) -> None:
-    dp = [[0 for _ in range(n)] for _ in range(n)]
+    constraint = 3
+    dp = [[0 for _ in range(n-constraint*2)] for _ in range(n)]
     for i in range(n):
-        for j in range(n):
+        for j in range(n-constraint*2):
             dp[i][j] = countUniquePaths(i+1, j+1)
     print(np.array(dp))
+
+print(printDp(20))
